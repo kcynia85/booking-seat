@@ -4,9 +4,103 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <script defer src="script.js"></script>
+  <title>Movie Seat Booking</title>
 </head>
 <body>
-    
+
+  <div class="cinema__showTime">
+      <label> Pick a movie:</label>
+      <select id="cinema__movie">
+        <option value="10">Malcolm & Marie ($10)</option>
+        <option value="12">King Kong vs Godzilla ($20)</option>
+        <option value="8">Top Gun: Maverick ($20)</option>
+        <option value="9">Black Widow ($15)</option>
+      </select>
+  </div>
+
+  <ul class="movie__showcase">
+    <li>
+      <div class="movie__seat"></div>
+      <small>N/A</small>
+    </li>
+    <li>
+      <div class="movie__seat movie__seat--selected"></div>
+      <small>Selected</small>
+    </li>
+    <li>
+      <div class="movie__seat movie__seat--occupied"></div>
+      <small>Occupied</small>
+    </li>
+  </ul>
+  <div class="room">
+    <div class="room_screen">
+      <div class="room_row">
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+      </div>
+      <div class="room__row">
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat room__seat--occupied"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat movie__seat--occupied"></div>
+        <div class="room__seat"></div>
+      </div>
+      <div class="room__row">
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat room__seat--occupied"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+      </div>
+      <div class="room__row">
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat room__seat--selected"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+      </div>
+      <div class="room__row">
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat room__seat--occupied"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+      </div>
+      <div class="row">
+        <div class="room__seat"></div>
+        <div class="room__seat room__seat--occupied"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+        <div class="room__seat"></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="text">You have selceted 
+    <span id="count">0</span> seats for a price of 
+    <span id="total"> </span></p>
+
 </body>
 </html>
