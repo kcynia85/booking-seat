@@ -5,7 +5,7 @@
   const total = document.querySelector('#js-cinemaTotal');
   const movieSelect = document.querySelector('#js-movieSelect');
 
-  const ticketPrice = +movieSelect.value;
+  let ticketPrice = +movieSelect.value;
 
   const updateSelectedCount = () => {
     const selectedSeats = document.querySelectorAll('.cinema__seat.cinema__seat--selected');
@@ -16,8 +16,12 @@
 
   };
 
-  // More performance way instead forEach loop
-   cinemaHall.addEventListener('click', (e) => {
+  movieSelect.addEventListener('change', e => {
+    ticketPrice = +e.target.value;
+    updateSelectedCount();
+  });
+
+   cinemaHall.addEventListener('click', e => {
     if (e.target.classList.contains('cinema__seat') 
         && !e.target.classList.contains('cinema__seat--occupied')) {
       e.target.classList.toggle('cinema__seat--selected');
