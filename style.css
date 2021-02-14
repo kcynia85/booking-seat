@@ -1,0 +1,129 @@
+:root {
+  --selected-color: hsl(174, 62%, 47%);
+  --avaiable-color: hsl(240, 9%, 29%);
+  --black-color: hsl(234, 19%, 10%);
+  --darkerBlack-color: hsl(240, 20%, 8%);
+  --gray-color: hsl(0, 0%, 47%);
+  --shadow-color: hsl(0, 0%, 73%);
+  --white-color: hsl(0, 4%, 86%);
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  color: var(--white-color);
+  background-color: var(--black-color);
+  font-family: "Lato", sans-serif;
+}
+
+.cinema__container {
+  margin: 20px 0;
+  perspective: 1000px;
+}
+
+.cinema__moviesList {
+  margin-left: 8px;
+  padding: 4px 8px 4px 8px;
+  -moz-appearance: none;
+  -webkit-apperance: none;
+  appearance: none;
+  background-color: var(--white-color);
+  border: 0;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.cinema__showcase {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding: 8px 16px;
+  color: var(--gray-color);
+  background: var(--darkerBlack-color);
+  border-radius: 8px;
+  list-style-type: none;
+}
+
+.cinema__showcaseList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cinema__seat {
+  height: 12px;
+  width: 16px;
+  margin: 3px;
+  background-color: hsl(240, 9%, 29%);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cinema__seat:nth-of-type(2) {
+  margin-right: 16px;
+}
+
+.cinema__seat:nth-last-of-type(2) {
+  margin-left: 16px;
+}
+
+.cinema__seat:not(.cinema__seat--occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.cinema__seat--static {
+  margin-right: 8px;
+}
+
+.cinema__seat--static:not(.cinema__seat--occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.cinema__seat--selected {
+  background-color: var(--selected-color);
+}
+
+.cinema__seat--occupied {
+  background-color: var(--white-color);
+}
+
+.cinema__row {
+  display: flex;
+  justify-content: center;
+}
+
+.cinema__screen {
+  height: 70px;
+  width: 60%;
+  margin: 24px auto;
+  background-color: var(--white-color);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transform: rotateX(-45deg);
+}
+
+.cinema__footer {
+  margin: 24px auto;
+  text-align: center;
+}
+
+.cinema__totalPrice,
+.cinema__selectedSeats {
+  color: var(--selected-color);
+  margin: 4px;
+}
