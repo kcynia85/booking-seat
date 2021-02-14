@@ -31,7 +31,6 @@ body {
 
 .cinema__container {
   margin: 20px 0;
-  perspective: 1000px;
 }
 
 .cinema__moviesList {
@@ -48,7 +47,7 @@ body {
 
 .cinema__showcase {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 24px;
   padding: 8px 16px;
   color: var(--gray-color);
@@ -81,13 +80,21 @@ body {
   margin-left: 16px;
 }
 
-.cinema__seat:not(.cinema__seat--occupied):hover {
+.cinema__seat:not(.cinema__seat--occupied):not(.cinema__seat--static):hover {
   cursor: pointer;
   transform: scale(1.2);
 }
 
 .cinema__seat--static {
   margin-right: 8px;
+}
+
+.cinema__seat--green {
+  background-color: var(--selected-color);
+}
+
+.cinema__seat--white {
+  background-color: var(--white-color);
 }
 
 .cinema__seat--static:not(.cinema__seat--occupied):hover {
@@ -101,6 +108,11 @@ body {
 
 .cinema__seat--occupied {
   background-color: var(--white-color);
+}
+
+.cinema__hall {
+  perspective: 1000px;
+  margin-bottom: 24px;
 }
 
 .cinema__row {

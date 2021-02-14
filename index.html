@@ -5,18 +5,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" 
-  integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" ,crossorigin="anonymous" />
+  integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <script defer src="app.js"></script>
   <title>Movie Seat Booking</title>
 </head>
 <body>
   <main class="cinema__container">
     <div class="cinema__showTime">
       <label>Choose a movie </label>
-      <select  id="cinema__selected" class="cinema__moviesList">
+      <select  id="js-movieSelect" class="cinema__moviesList">
         <option value="10">Malcolm & Marie ($10)</option>
         <option value="12">King Kong vs Godzilla ($20)</option>
         <option value="8">Top Gun: Maverick ($20)</option>
@@ -30,16 +30,17 @@
       <small>N/A</small>
     </li>
     <li class="cinema__showcaseList">
-      <div class="cinema__seat cinema__seat--static cinema__seat--selected"></div>
+      <div class="cinema__seat cinema__seat--static cinema__seat--green"></div>
       <small>Selected</small>
     </li>
     <li class="cinema__showcaseList">
-      <div class="cinema__seat cinema__seat--static cinema__seat--occupied"></div>
+      <div class="cinema__seat cinema__seat--static cinema__seat--white"></div>
       <small>Occupied</small>
     </li>
   </ul>
-  <div class="cinema__screen"></div>
-  <div class="cinema__room">
+  
+  <div class="cinema__hall">
+    <div class="cinema__screen"></div>
       <div class="cinema__row">
         <div class="cinema__seat"></div>
         <div class="cinema__seat"></div>
@@ -57,7 +58,7 @@
         <div class="cinema__seat"></div>
         <div class="cinema__seat"></div>
         <div class="cinema__seat"></div>
-        <div class="cinema__seat cinema__seat--selected"></div>
+        <div class="cinema__seat"></div>
         <div class="cinema__seat"></div>
       </div>
       <div class="cinema__row">
@@ -73,7 +74,7 @@
       <div class="cinema__row">
         <div class="cinema__seat"></div>
         <div class="cinema__seat"></div>
-        <div class="cinema__seat cinema__seat--selected"></div>
+        <div class="cinema__seat"></div>
         <div class="cinema__seat"></div>
         <div class="cinema__seat"></div>
         <div class="cinema__seat"></div>
@@ -103,9 +104,9 @@
     </div>
   </div>
 
-  <footer class="cinema__footer">You have selceted 
-    <span id="cinema__selectedSeats2" class="cinema__selectedSeats">0</span> seats for a price of $
-    <span id="cinema__totalPrice2" class="cinema__totalPrice">0</span>
+  <footer class="cinema__footer">You have selected 
+    <span id="js-cinemaCount" class="cinema__selectedSeats">0</span> seats for a price of $
+    <span id="js-cinemaTotal" class="cinema__totalPrice">0</span>
   </footer>
   </main>
 </body>
